@@ -11,6 +11,9 @@ const digitMapping = {
 
 const letterCombinations = digits => {
   //add checks for input validation
+  if (!/^[2-9]*$/.test(digits)) {
+     throw new Error('digits should be between 2 and 9');
+  }
   if(!digits.length) {
     return [];
   }
@@ -39,4 +42,4 @@ const letterCombinations = digits => {
   });
 }
 
-letterCombinations('23');
+module.exports = { letterCombinations }
