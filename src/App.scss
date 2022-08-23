@@ -1,0 +1,33 @@
+:root {
+  --purple: #883fff;
+  --black: #242d49;
+  --gray: #b4b4b5a1;
+  --lightblue: #eaf6f6;
+}
+
+body {
+  margin: 0;
+}
+
+.app {
+  padding: 0.5rem 1.5rem;
+  color: var(--black);
+  background: var(--blue);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+
+  &--body {
+    background-color: var(--lightblue);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    width: 90vw;
+  }
+}
