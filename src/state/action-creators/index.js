@@ -34,14 +34,13 @@ export const fetchPredictions = (input) => {
         return temp;
       })
       .then((data) => {
-        console.log(data);
         if (data.length) {
           dispatch(updateScreenOutpout(data[0]));
           dispatch(updateExpansions(data));
         }
       })
       .catch(() => {
-        console.log('Server Error');
+        console.log('Server Error Occurred');
         return [];
       });
   };

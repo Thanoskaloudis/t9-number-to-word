@@ -9,7 +9,6 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'setExpansions':
       newState.value = action.payload;
-      console.log(newState)
       break;
     default:
       return newState;
