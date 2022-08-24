@@ -8,7 +8,7 @@ export const Controller = () => {
   const [index, setindex] = useState(1);
   const expansions = useSelector((state) => state.expansions.value);
   const dispatch = useDispatch();
-  const {  } = bindActionCreators(
+  const { updateScreenOutpout } = bindActionCreators(
     actionCreators,
     dispatch
   );
@@ -25,11 +25,15 @@ export const Controller = () => {
     }
   };
 
+  const handlePick = (event) => {
+    updateScreenOutpout(event.target.textContent)
+  };
+
   return (
     <div className="controller">
       <button className="controller--arrow" onClick={handlePrevious}>❮</button>
-      <button className="controller--prediction">{expansions[index]}</button>
-      <button className="controller--prediction">{expansions[index + 1]}</button>
+      <button className="controller--prediction"onClick={handlePick}>{expansions[index]}</button>
+      <button className="controller--prediction"onClick={handlePick}>{expansions[index + 1]}</button>
       <button className="controller--arrow" onClick={handleNext}>❯</button>
     </div>
   );

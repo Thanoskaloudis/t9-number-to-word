@@ -36,7 +36,7 @@ export const fetchPredictions = (input) => {
       .then((data) => {
         console.log(data);
         if (data.length) {
-          dispatch(fetchPredictionsSuccess(data[0]));
+          dispatch(updateScreenOutpout(data[0]));
           dispatch(updateExpansions(data));
         }
       })
@@ -47,7 +47,7 @@ export const fetchPredictions = (input) => {
   };
 };
 
-export const fetchPredictionsSuccess = (value) => {
+export const updateScreenOutpout = (value) => {
   return (dispatch) => {
     dispatch(changeScreenResult(value));
   };
