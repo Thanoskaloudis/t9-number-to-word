@@ -5,15 +5,15 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   const newState = { ...state };
-  const inputLength = state.value.length;
+  const outLength = state.value.length;
 
   switch (action.type) {
-    case 'changeInput':
-      newState.value += action.payload;
+    case 'changeScreenResult':
+      newState.value = action.payload;
       break;
     case 'reduceString':
-      if (inputLength) {
-        newState.value = newState.value.substring(0, inputLength - 1);
+      if (outLength) {
+          newState.value = newState.value.substring(0, outLength - 1);
       }
       break;
     default:

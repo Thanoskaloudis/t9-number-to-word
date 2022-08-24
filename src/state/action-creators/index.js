@@ -1,17 +1,3 @@
-export const fetchPredictionsSuccess = (value) => {
-  return {
-    type: 'fetchPredictionsSuccess',
-    payload: value,
-  };
-};
-
-export const fetchPredictionsFailure = (error) => {
-  return {
-    type: 'fetchPredictionsFailure',
-    payload: error,
-  };
-};
-
 export const changeInput = (value) => {
   return {
     type: 'changeInput',
@@ -19,38 +5,54 @@ export const changeInput = (value) => {
   };
 };
 
-export const reduceInput = () => {
+export const reduceString = () => {
   return {
-    type: 'reduceInput',
+    type: 'reduceString',
     payload: '',
   };
 };
 
-export const fetchPredictions = (input) => {
-    return (dispatch) => {
-      fetch(`http://localhost:8000?input=${input}`)
-      .then(function(response) {
-        let temp = response.json();
-        return temp
-      }).then(function(data) {
-        console.log(data);
-      })
-      .catch(() => {
-        console.log('Server Error')
-        return []
-      })
-    };
+export const changeScreenResult = (value) => {
+  return {
+    type: 'changeScreenResult',
+    payload: value,
+  };
 };
 
+export const fetchPredictions = (input) => {
+  return (dispatch) => {
+    fetch(`http://localhost:8000?input=${input}`)
+      .then((response) => {
+        let temp = response.json();
+        return temp;
+      })
+      .then((data) => {
+        console.log(data);
+        if (data.length) {
+          dispatch(fetchPredictionsSuccess(data[0]));
+        }
+      })
+      .catch(() => {
+        console.log('Server Error');
+        return [];
+      });
+  };
+};
+
+export const fetchPredictionsSuccess = (value) => {
+  return (dispatch) => {
+    dispatch(changeScreenResult(value));
+  };
+};
 
 export const updateInput = (value) => {
   return (dispatch) => {
-    dispatch(changeInput(value))
+    dispatch(changeInput(value));
   };
 };
 
 export const backspace = () => {
   return (dispatch) => {
-    dispatch(reduceInput())
+    dispatch(reduceString());
   };
 };

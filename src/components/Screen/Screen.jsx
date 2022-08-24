@@ -3,12 +3,12 @@ import { useSelector } from 'react-redux';
 import './Screen.scss';
 
 export const Screen = () => {
-  const inputValue = useSelector((state) => state.inputValue.inputValue);
+  const outputValue = useSelector((state) => state.output.value);
 
   return (
     <div className="screen">
     <span className="screen--prev-text"></span>
-    <span className="screen--current-text">{inputValue}</span>
+    <span className="screen--current-text">{outputValue}</span>
   </div>
   )
 }

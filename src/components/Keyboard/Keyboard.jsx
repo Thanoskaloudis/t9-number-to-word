@@ -1,19 +1,23 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../state/index';
 import { Button } from '../Button/Button';
 import './Keyboard.scss';
 
 export const Keyboard = () => {
+  const inputValue = useSelector((state) => state.input.value);
   const dispatch = useDispatch();
-  const { backspace } = bindActionCreators(
+  const { backspace, fetchPredictions } = bindActionCreators(
     actionCreators,
     dispatch
   );
 
   const handleBackspace = () => {
     backspace();
+    if(inputValue.length) {
+      fetchPredictions(inputValue.substring(0, inputValue.length - 1));
+    }
   }
 
   return (
