@@ -1,6 +1,21 @@
 .controller {
+  display: flex;
+  gap: 10px;
   width: 17rem;
   height: 2rem;
-  margin: 0rem 0rem 1rem 0rem;
-  border-style: none
+  margin-bottom: 1.5rem;
+
+  &--arrow {
+    width: 2rem;
+    height: 2.5rem;
+    border: none;
+    color: var(--purple);
+  }
+
+  &--prediction {
+    width: 6rem;
+    height: 2.5rem;
+    border: none;
+    font-size: 1rem;
+  }
 }

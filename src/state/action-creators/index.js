@@ -19,6 +19,13 @@ export const changeScreenResult = (value) => {
   };
 };
 
+export const setExpansions = (value) => {
+  return {
+    type: 'setExpansions',
+    payload: value,
+  };
+};
+
 export const fetchPredictions = (input) => {
   return (dispatch) => {
     fetch(`http://localhost:8000?input=${input}`)
@@ -30,6 +37,7 @@ export const fetchPredictions = (input) => {
         console.log(data);
         if (data.length) {
           dispatch(fetchPredictionsSuccess(data[0]));
+          dispatch(updateExpansions(data));
         }
       })
       .catch(() => {
@@ -42,6 +50,12 @@ export const fetchPredictions = (input) => {
 export const fetchPredictionsSuccess = (value) => {
   return (dispatch) => {
     dispatch(changeScreenResult(value));
+  };
+};
+
+export const updateExpansions = (value) => {
+  return (dispatch) => {
+    dispatch(setExpansions(value));
   };
 };
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../state/index';
+import './Button.scss';
 
 export const Button = ({ type = 'button', disabled, value, children }) => {
   const [input, setInput] = useState('');
@@ -22,7 +23,7 @@ export const Button = ({ type = 'button', disabled, value, children }) => {
   });
 
   return (
-    <button type={type} disabled={disabled} onClick={handleClick}>
+    <button className="key" type={type} disabled={disabled} onClick={handleClick}>
       {children}
     </button>
   )
