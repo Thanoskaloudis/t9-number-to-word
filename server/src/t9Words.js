@@ -26,8 +26,6 @@ const letterCombinations = digits => {
       return [''];
     }
   })
-  
-  console.log(lettersArray);
 
   // get all possible combination
   return lettersArray.reduce((prevEntry, currEntry) => {
@@ -35,9 +33,7 @@ const letterCombinations = digits => {
     prevEntry.reduce((noop, current) => {
        const temp = [...currEntry];
        temp.map(dig => combinations.push(`${current}${dig}`));
-       console.log(temp);
     }, '');
-    console.log(combinations);
     return combinations;
   });
 }
