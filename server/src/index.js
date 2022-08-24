@@ -5,10 +5,11 @@ const app = express();
 
 app.get("/", (req, res)=> {
   const { input } = req.query;
-  console.log(input);
+  const digits = String(input);
 
-  const possibleWords = t9Words.letterCombinations("23")
-  console.log(possibleWords);
+  const possibleWords = t9Words.letterCombinations(digits); 
+
+  res.send(possibleWords);
 });
 
 app.listen(8000, () => {
