@@ -1,17 +1,20 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../state/index';
 
 export const Button = ({ type = 'button', disabled, value, children }) => {
+  const inputValue = useSelector((state) => state.inputValue.inputValue);
   const dispatch = useDispatch();
-  const { updateInput } = bindActionCreators(
+  const { updateInput, fetchPredictions } = bindActionCreators(
     actionCreators,
     dispatch
   );
 
   const handleClick = () => {
-    updateInput(value);
+    updateInput(value)
+    console.log(inputValue);
+    fetchPredictions(inputValue);
   }
 
   return (

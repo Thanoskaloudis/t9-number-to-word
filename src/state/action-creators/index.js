@@ -26,8 +26,20 @@ export const reduceInput = () => {
   };
 };
 
-export const fetchPredictions = () => {
-  //TODO
+export const fetchPredictions = (input) => {
+    return (dispatch) => {
+      fetch(`http://localhost:8000?input=${input}`)
+      .then(function(response) {
+        let temp = response.json();
+        return temp
+      }).then(function(data) {
+        console.log(data);
+      })
+      .catch(() => {
+        console.log('Server Error')
+        return []
+      })
+    };
 };
 
 

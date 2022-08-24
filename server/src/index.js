@@ -1,7 +1,9 @@
 const express = require("express");
+const cors = require('cors')
 const t9Words = require('./t9Words');
 
 const app = express();
+app.use(cors())
 
 app.get("/", (req, res)=> {
   const { input } = req.query;
