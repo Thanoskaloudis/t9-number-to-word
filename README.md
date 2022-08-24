@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# T9 Number-to-Word Converter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+An application that simulates the behavior of a T9-style keyboard. The user gives input, and the app prints one of the possible words. For example, for input "43556" the output will be "hello". 
 
-In the project directory, you can run:
+## Set up
+1. Make sure Node and npm are installed from the terminal. For the CLIENT run:
 
-### `npm start`
+    ```
+    npm install
+    ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Start the project.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    ```
+    npm start
+    ```
 
-### `npm test`
+3. Now you can visit http://localhost:3000 to view the client
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Now, navigate to ./server and run 
+    ```
+    npm install
+    ```
+5. Start the server.
 
-### `npm run build`
+    ```
+    npm run dev
+    ```
+6. The server will now run on http://localhost:8000
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Notes
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Back End has been created using Node and more specifically Express Library.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Front End has been created using React and React Redux for the state management.
 
-### `npm run eject`
+## How to use
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Use the digits from the keyboard for input
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Use Backspace for deleting input
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* use arrows '❮' '❯' to browse through the possible words. 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Comments
 
-## Learn More
+Things that have not been implemented due to time constraints:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* A space button to jump on the next word.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Unit Testing
 
-### Code Splitting
+* A more advanced controller panel
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  
