@@ -1,8 +1,21 @@
 import React from 'react';
-import './Keyboard.scss';
+import { useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../../state/index';
 import { Button } from '../Button/Button';
+import './Keyboard.scss';
 
 export const Keyboard = () => {
+  const dispatch = useDispatch();
+  const { backspace } = bindActionCreators(
+    actionCreators,
+    dispatch
+  );
+
+  const handleBackspace = () => {
+    backspace();
+  }
+
   return (
     <div className="keyboard">
     <Button className="key" disabled="disabled" value="1">1 <small>.,?</small></Button>
@@ -16,7 +29,7 @@ export const Keyboard = () => {
     <Button className="key" value="9">9 <small>wxyz</small></Button>
     <Button className="key" disabled="disabled" value="symbol">* #</Button>
     <Button className="key" disabled="disabled" value="0">0</Button>
-    <Button className="key" value="space"><small>space</small></Button>
+    <button className="key" onClick={handleBackspace} value="backspace">⌫</button>
   </div>
   )
 }

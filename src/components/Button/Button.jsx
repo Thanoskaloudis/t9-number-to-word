@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../state/index';
 
-export const Button = ({ type = 'button', value, children }) => {
+export const Button = ({ type = 'button', disabled, value, children }) => {
   const dispatch = useDispatch();
   const { updateInput } = bindActionCreators(
     actionCreators,
@@ -15,7 +15,7 @@ export const Button = ({ type = 'button', value, children }) => {
   }
 
   return (
-    <button type={type} onClick={handleClick}>
+    <button type={type} disabled={disabled} onClick={handleClick}>
       {children}
     </button>
   )
