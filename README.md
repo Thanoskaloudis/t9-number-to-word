@@ -46,7 +46,7 @@ An application that simulates the behavior of a T9-style keyboard. The user give
 
 ## Comments
 
-Things that have not been implemented due to time constraints:
+TODO:
 
 * A space button to jump on the next word.
 
